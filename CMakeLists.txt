@@ -32,7 +32,6 @@ add_library(${SDM_LIBRARY}
 
   src/mixer.c
   src/music.c
-  src/music_cmd.c
   src/music_wav.c
 )
 
@@ -79,21 +78,6 @@ set_target_properties(${SDM_LIBRARY}
 )
 
 set(SDM_HEADERS
-  src/load_voc.h
-  src/mixer.h
-  src/music.h
-  src/music_cmd.h
-  src/music_flac.h
-  src/music_fluidsynth.h
-  src/music_mad.h
-  src/music_mikmod.h
-  src/music_modplug.h
-  src/music_mpg123.h
-  src/music_nativemidi.h
-  src/music_ogg.h
-  src/music_opus.h
-  src/music_timidity.h
-  src/music_wav.h
   src/SDL_mixer.h
 )
 
