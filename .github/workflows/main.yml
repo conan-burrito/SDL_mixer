@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip setuptools wheel
-            pip install conan conan_package_tools
+            pip install conan==1.30.2 conan_package_tools==0.34.3
       - name: Build native
         run:  |
           python .ci/build-default.py
