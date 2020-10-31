@@ -37,26 +37,37 @@ add_library(${SDM_LIBRARY}
 
 if(WITH_FLAC)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_flac.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_FLAC)
 endif()
 
 if(WITH_MAD)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_mad.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_MP3_MAD)
+endif()
+
+if(WITH_CMD)
+  target_sources(${SDM_LIBRARY} PRIVATE src/music_cmd.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_CMD)
 endif()
 
 if(WITH_MICMOD)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_mikmod.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_MOD_MIKMOD)
 endif()
 
 if(WITH_MODPLUG)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_modplug.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_MOD_MODPLUG)
 endif()
 
 if(WITH_MPEG)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_mpg123.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_MP3_MPG123)
 endif()
 
 if(WITH_OPUS)
   target_sources(${SDM_LIBRARY} PRIVATE src/music_opus.c)
+  target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_OPUS)
 endif()
 
 if(WITH_OGG)
@@ -69,7 +80,7 @@ set_target_properties(${SDM_LIBRARY} PROPERTIES OUTPUT_NAME SDL2_mixer)
 target_link_libraries(${SDM_LIBRARY} PUBLIC ${CONAN_LIBS})
 target_include_directories(${SDM_LIBRARY} PRIVATE ${CONAN_INCLUDE_DIRS_SDL2}/SDL2 ${CONAN_INCLUDE_DIRS})
 
-target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_WAV MUSIC_CMD)
+target_compile_definitions(${SDM_LIBRARY} PRIVATE MUSIC_WAV)
 
 set_target_properties(${SDM_LIBRARY}
     PROPERTIES

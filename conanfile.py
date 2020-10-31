@@ -77,6 +77,7 @@ class SDLMixerConan(ConanFile):
         self._cmake.definitions['WITH_MPEG'] = 'OFF'
         self._cmake.definitions['WITH_OPUS'] = 'OFF'
         self._cmake.definitions['WITH_MAD'] = 'OFF'
+        self._cmake.definitions['WITH_CMD'] = 'OFF'
 
         self._cmake.configure(build_folder=self.build_subfolder)
         return self._cmake
