@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip setuptools wheel
-            pip install conan==1.30.2 conan_package_tools==0.34.3
+            pip install conan conan_package_tools
             conan remote disable conan-center
             conan config install ${{ github.workspace }}/profiles/settings.yml
       - name: Build native
