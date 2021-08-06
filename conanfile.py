@@ -25,8 +25,6 @@ class SDLMixerConan(ConanFile):
         'ogg': True
     }
 
-    build_policy = 'missing'
-
     exports_sources = ['CMakeLists.txt', 'patches/*']
 
     _cmake = None
@@ -52,7 +50,7 @@ class SDLMixerConan(ConanFile):
         return "_build"
 
     def requirements(self):
-        self.requires("SDL2/2.0.12@conan-burrito/stable")
+        self.requires("SDL2/2.0.14@conan-burrito/stable")
 
         if self.options.ogg:
             self.requires("ogg/1.3.4@conan-burrito/stable")
